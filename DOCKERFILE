@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/windows/nanoserver:ltsc2019
+
+WORKDIR C:\HelloWorld
+
+RUN echo "Write-Host 'Hello World'" > test.ps1
+
+CMD ["powershell", "-File", "C:\\HelloWorld\\test.ps1"]
