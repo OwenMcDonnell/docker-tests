@@ -1,15 +1,15 @@
 image: Visual Studio 2022
 
-init: 
-  - ps: Stop-Service -Name *Docker* -Force
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#init: 
+ # - ps: Stop-Service -Name *Docker* -Force
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #services:
  # - docker
 
 before_build:
    
-  - ps: Start-Process -FilePath "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe" -Verb RunAs
+  #- ps: Start-Process -FilePath "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe" -Verb RunAs
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
  # - ps: Stop-Service -Name *Docker*
