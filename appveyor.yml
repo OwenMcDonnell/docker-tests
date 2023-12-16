@@ -4,7 +4,8 @@ image: Visual Studio 2022
 #  - docker
 
 before_build:
-  - ps: & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
+  - ps: >-
+      & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
   
 build_script:
   - ps: docker build -t hello-world-image .
