@@ -4,6 +4,7 @@ image: Visual Studio 2022
 #  - docker
 
 before_build:
+  - ps: .\service-test.ps1
   - ps: >-
       & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
   
