@@ -2,7 +2,7 @@ image: Visual Studio 2022
 
 #init: 
  # - ps: Stop-Service -Name *Docker* -Force
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #services:
  # - docker
