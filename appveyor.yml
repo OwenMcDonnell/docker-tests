@@ -7,7 +7,7 @@ before_build:
   - ps: .\service-test.ps1
   - ps: >-
       & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
-      & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon
+      & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe" -SwitchDaemon
   
 build_script:
   - ps: docker build -t hello-world-image .
