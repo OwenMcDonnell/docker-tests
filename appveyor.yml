@@ -5,14 +5,10 @@ services:
   
 test_script:
 #- ps: .\test.ps1
-  - ps: .\service-test.ps1
-    
-  - ps: >-
-      cd src\transparency.infrastructure.whoislookupservice
+  #- ps: .\service-test.ps1
 
-      docker build -t whoislookup-image -f Dockerfile .
-
-build: off
+build_script:
+  - ps: docker build -t hello-world-image .
 
 on_failure:
 - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
