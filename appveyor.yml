@@ -9,12 +9,13 @@ init:
 
 before_build:
   
+  - ps: Start-Process -FilePath "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe" -Verb runas
 
  # - ps: Stop-Service -Name *Docker*
  # - ps: Start-Service -Name *Docker*
   #- ps: .\service-test.ps1
-  - ps: >-
-      & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
+ # - ps: >-
+  #    & "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))   
   #- ps: Switch-DockerWindows
   
